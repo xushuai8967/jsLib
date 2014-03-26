@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type"  content="text/html; charset=utf-8" />  
+  
+<title>无标题文档</title>  
+<script type="text/javascript" src="julyJs.js" ></script>  
+<script type="text/javascript" src="xs.js" ></script>  
+ 
+ <script type="text/javascript">  
+    function  testClick()  
+    {  
+    	/* var dateUtil = XS.date;
+		alert(dateUtil.parse(today)); */
+		var p = new Object();
+		p.name = "xushuai";
+		var b = new Object();
+		b.age = "1";
+		XS.extend(b,p);
+		alert(p.name);
+		alert(b.name);
+		alert(b.age);
+    }  
+ </script>  
+</head>  
+  
+<body >  
+	<input type="button" onclick="testClick()"/>  
+</body>  
+</html>  
