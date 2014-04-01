@@ -57,30 +57,30 @@ XS.extend = function(target, source) {
 }
 
 XS.date = {
-	getFormatDate : function(date, pattern) {
-		if (date == undefined) {   
-        date = new Date();   
-    }   
-    if (pattern == undefined) {   
-        pattern = "yyyy-MM-dd hh:mm:ss";   
-    }   
-    return date.format(pattern);   
-	},
+    getFormatDate : function(date, pattern) {
+	if (date == undefined) {   
+	    date = new Date();   
+    	}   
+        if (pattern == undefined) {   
+            pattern = "yyyy-MM-dd hh:mm:ss";   
+        }   
+            return date.format(pattern);   
+    },
 	
-	getSmpFormatDate: function(date, isFull) {   
-    var pattern = "";   
-    if (isFull == true || isFull == undefined) {   
-        pattern = "yyyy-MM-dd hh:mm:ss";   
-    } else {   
-        pattern = "yyyy-MM-dd";   
-    }   
-    return this.getFormatDate(date, pattern);   
-	} ,
+    getSmpFormatDate: function(date, isFull) {   
+        var pattern = "";   
+        if (isFull == true || isFull == undefined) {   
+            pattern = "yyyy-MM-dd hh:mm:ss";   
+        } else {   
+            pattern = "yyyy-MM-dd";   
+        }   
+        return this.getFormatDate(date, pattern);   
+    } ,
 	
-	getSmpFormatDateByLong : function (l, isFull) {   
-    return this.getSmpFormatDate(new Date(l), isFull);   
-	}  
-	}
+    getSmpFormatDateByLong : function (l, isFull) {   
+        return this.getSmpFormatDate(new Date(l), isFull);   
+    }  
+}
 
 /*
  * 验证 工具
