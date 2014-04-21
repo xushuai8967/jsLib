@@ -279,7 +279,39 @@ XS.validate = {
     
 }
 
-
+XS.string = {
+	contains : function(target,str){
+	},
+	contains : function(target,str,separator){
+	},
+	startWith : function(target,startStr,ignorecase){
+	},
+	endWith : function(target,endStr,ignorecase){
+	},
+	repeat : function(str,times){
+		
+	},
+	/*
+	 * 常用于字符串拼接
+	 * format("result is #{0},#{1}",22,33); // return "result is 22,33";
+	 * var obj = {name:"hehe",sex:"female"};
+	 * format("#{name} is a #{sex}",obj);   //return "hehe is a female";
+	 */
+	format : function(str , object){
+		var array = Array.prototype.slice.call(arguments,1);
+		return str.replace(/\\?\#{([^{}]+)\}/gm,function(match, name){
+			if (match.charAt(0) == '\\')
+				return match.slice(1);
+			var index = Number(name);
+			if(index >= 0)
+				return array[index];
+			if (object && object[name] !== void 0)
+				return object[name];
+			return '';
+		});
+	}
+	
+}
 
 
 
