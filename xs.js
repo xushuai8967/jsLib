@@ -281,12 +281,36 @@ XS.validate = {
 
 XS.string = {
 	contains : function(target,str){
-	},
-	contains : function(target,str,separator){
+		var result = true;
+		target.indexOf(str)>-1?result:result = false;
+		return result;
 	},
 	startWith : function(target,startStr,ignorecase){
+		var result = false;
+		if(startStr == null || startStr == "" || startStr.length > target.length){
+			return result;
+		}
+		if(ignorecase){
+			startStr = startStr.toLowerCase();
+			target = target.toLowerCase();	
+		}
+		var st = target.substring(0, startStr.length);
+		st==startStr ? result = true : result;
+		return result;
 	},
 	endWith : function(target,endStr,ignorecase){
+		var result = false;
+		if(endStr == null || endStr == "" || endStr.length > target.length){
+			return result;
+		}
+		if(ignorecase){
+			endStr = endStr.toLowerCase();
+			target = target.toLowerCase();	
+		}
+		var end = target.substring(target.length-endStr.length, target.length);
+		end==endStr ? result = true : result;
+		return result;
+
 	},
 	repeat : function(str,times){
 		

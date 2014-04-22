@@ -9,21 +9,16 @@
  <script type="text/javascript">  
     function  testClick()  
     {  
-    	/* var dateUtil = XS.date;
-		alert(dateUtil.parse(today)); */
-		var p = new Object();
-		p.name = "xushuai";
-		var b = new Object();
-		b.age = "1";
-		XS.extend(b,p);
-		alert(p.name);
-		alert(b.name);
-		alert(b.age);
+			var result = XS.string.endWith("result is hehe","HEhe",true); // true
+			alert(result);
+			result = XS.string.endWith("result is hehe", "aa"); // false
+			alert(result);
+			
     }  
  </script>  
 </head>  
   
 <body >  
-	<input type="button" onclick="testClick()"/>  
+	<input type="button" onclick="testClick()" value="test"/>  
 </body>  
 </html>  
