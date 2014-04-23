@@ -9,9 +9,9 @@
  <script type="text/javascript">  
     function  testClick()  
     {  
-			var result = XS.string.endWith("result is hehe","HEhe",true); // true
+			var result = XS.string.startWith("result is hehe","result",true); // true
 			alert(result);
-			result = XS.string.endWith("result is hehe", "aa"); // false
+			result = XS.string.endWith("result is hehe", "Hehe",true); // false
 			alert(result);
 			
     }  
